@@ -1,0 +1,5 @@
+我用的變數有 inst: 儲存指令、 RF:作為register、 addRS&multRS: RStable、addBuffer&multBuffer:Buffer、change:判斷內容是否有改變
+在主程式中先跑doBuffer()，讓每一operator的cycle-1或者cycle為0的話writeback，並且改在RS中相關的值。
+再跑dispatch()，假buffer是空的並且某一行RS的數值都到的話就給到buffer，並且算出結果。
+再跑issue()，如果RS有空間並且指令還沒全執行完的話就把指令配給RS並且改相關RAT的值。
+最後再輸出目前的狀態。
